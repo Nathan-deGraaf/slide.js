@@ -1,0 +1,69 @@
+// setup
+$slider-width: 80%;
+$button-bg-color: rgba(0, 0, 0, 0.5);
+$button-color: white;
+$slide-bg-color: #ddd;
+$slide-padding: 20px;
+$slide-font-size: 24px;
+
+// Mixins (if needed for future use)
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: $slider-width;
+  margin: auto;
+
+  .slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: $slide-padding;
+    background-color: $slide-bg-color;
+    text-align: center;
+    font-size: $slide-font-size;
+  }
+
+  .slider-prev, .slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY( -50% );
+    background-color: $button-bg-color;
+    color: $button-color;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .slider-prev {
+    left: 10px;
+  }
+
+  .slider-next {
+    right: 10px;
+  }
+
+  .slider-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+    .slider-dot {
+      width: 10px;
+      height: 10px;
+      background-color: $button-bg-color;
+      border: none;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+
+      &.active {
+        background-color: $button-color;
+      }
+    }
+  }
+}
